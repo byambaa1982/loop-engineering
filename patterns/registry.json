@@ -1,0 +1,32 @@
+{
+  "patterns": [
+    {
+      "slug": "daily-triage",
+      "name": "Daily Triage",
+      "autonomy": "L1",
+      "cadence": "daily",
+      "summary": "Cluster new issues, identify likely owners, and prepare a reviewable triage report."
+    },
+    {
+      "slug": "pr-babysitter",
+      "name": "PR Babysitter",
+      "autonomy": "L2",
+      "cadence": "on pull request activity",
+      "summary": "Watch pull requests for failing checks, reviewer comments, and merge readiness."
+    },
+    {
+      "slug": "dependency-sweeper",
+      "name": "Dependency Sweeper",
+      "autonomy": "L2",
+      "cadence": "weekly",
+      "summary": "Batch dependency updates into small, testable changes with rollback notes."
+    },
+    {
+      "slug": "post-merge-cleanup",
+      "name": "Post-Merge Cleanup",
+      "autonomy": "L3",
+      "cadence": "after merge",
+      "summary": "Remove temporary scaffolding, update docs, and check release notes after merge."
+    }
+  ]
+}

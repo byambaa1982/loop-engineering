@@ -1,0 +1,59 @@
+[build-system]
+requires = ["hatchling>=1.25"]
+build-backend = "hatchling.build"
+
+[project]
+name = "loop-engineering"
+version = "0.1.0"
+description = "Python CLI tools and starters for designing agentic engineering loops."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Loop Engineering Contributors" }]
+keywords = ["ai", "agents", "cli", "automation", "engineering"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Environment :: Console",
+  "Intended Audience :: Developers",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Software Development :: Quality Assurance",
+]
+
+[project.urls]
+Homepage = "https://github.com/byambaa1982/loop-engineering"
+Repository = "https://github.com/byambaa1982/loop-engineering"
+
+[project.scripts]
+loop = "loop_engineering.cli:main"
+loop-init = "loop_engineering.cli:loop_init_main"
+loop-audit = "loop_engineering.cli:loop_audit_main"
+loop-cost = "loop_engineering.cli:loop_cost_main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/loop_engineering"]
+
+[tool.hatch.build.targets.sdist]
+include = [
+  "/src",
+  "/tests",
+  "/docs",
+  "/patterns",
+  "/starters",
+  "/README.md",
+  "/pyproject.toml",
+]
+
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
